@@ -1,0 +1,17 @@
+# Ativa o mecanismo de escrita do apache
+RewriteEngine On
+ 
+#Define o caminho base para todas as regras
+RewriteBase /kioficina/public/
+ 
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+ 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+ 
+
+ 
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+ 
